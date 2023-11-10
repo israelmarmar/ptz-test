@@ -1,0 +1,28 @@
+.input {
+   display: flex;
+   flex-direction: column;
+}
+
+.input input{
+    border-radius: 12px;
+    border: 1px solid #D5D5D5;
+    width: 265px;
+    height: 45px;
+    padding-left: 14px;
+    color: #747474;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.input label {
+    margin-bottom: 12px;
+    color: #1D1D1D;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

@@ -9,7 +9,7 @@ export default function Header() {
         <RedButton title="Centro pokémon" iconSrc={pokeball} isCollapse />
         <div className={styles["header-menu"]}>
             <WhiteButton title="Quem somos" link={"/about"} />
-            <RedButton title="Agendar consulta" />
+            <RedButton title="Agendar consulta" link="/consulta" />
         </div>
     </div>
   );
