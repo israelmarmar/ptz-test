@@ -94,6 +94,10 @@ a {
   text-decoration: none;
 }
 
+.MuiBreadcrumbs-li, .MuiBreadcrumbs-separator, .MuiBreadcrumbs-li p {
+ color: white;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

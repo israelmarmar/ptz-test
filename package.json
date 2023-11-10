@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.17",
     "@next/font": "13.0.7",
     "@types/node": "18.11.15",
     "@types/react": "18.0.26",
@@ -17,6 +20,8 @@
     "eslint-config-next": "13.0.7",
     "next": "13.0.7",
     "react": "18.2.0",
+    "react-breadcrumb": "^1.0.0",
+    "react-breadcrumbs": "^2.1.7",
     "react-dom": "18.2.0",
     "typescript": "4.9.4"
   }

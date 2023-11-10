@@ -1,0 +1,20 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-subtitle-text {
+  font-size: 18px;
+}
+
+.about-text {
+  font-size: 16px;
+}
+
+.about-main {
+  width: 40%;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
