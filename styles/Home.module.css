@@ -5,6 +5,20 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  background-image: url("/images/pokemon-hero.jpg");
+}
+
+.main h6 {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .description {

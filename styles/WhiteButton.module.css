@@ -1,0 +1,35 @@
+.white-button img{
+    margin-left: 18px;
+    margin-right: 10px;
+}
+
+.white-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 50px;
+  border: none;
+  background: #FFF;
+  width: 200px;
+  padding: 10px 15px 10px 10px;
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  line-height: normal;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.white-button-text {
+  text-align: center;
+  vertical-align: middle;
+  overflow-x: hidden;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
