@@ -16,3 +16,7 @@
 .select-input {
     width: 265px;
 }
+
+.select-input-full {
+    width: 100%;
+}

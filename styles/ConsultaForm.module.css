@@ -27,11 +27,20 @@
   margin-top: 30px;
 }
 
-.consulta-form-row {
+.consulta-form-row-space-between {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
+}
+
+.consulta-form-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 .consulta-form-main label {
@@ -51,4 +60,5 @@
   font-weight: 500;
   line-height: normal;
   margin-top: 15px;
+  margin-bottom: 15px;
 }

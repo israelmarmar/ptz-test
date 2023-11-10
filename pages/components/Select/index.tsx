@@ -1,18 +1,30 @@
-import { useState } from "react";
+import { useState, CSSProperties } from "react";
 import styles from "../../../styles/SelectBox.module.css";
 import Select from "react-select";
+import Image from "next/image";
+import arrowUp from "../../../public/icons/arrow-up.svg";
+import arrowDown from "../../../public/icons/arrow-down.svg";
 
 interface SelectProps {
-    name: string
-    label: string
-    placeholder?: string
+  name: string;
+  label: string;
+  placeholder?: string;
+  style?: CSSProperties;
 }
-  
-  const options = [
-    { value: "option1", label: "Option 1" },
-    { value: "option2", label: "Option 2" },
-    { value: "option3", label: "Option 3" },
-  ];
+
+const options = [
+  { value: "option1", label: "Option 1" },
+  { value: "option2", label: "Option 2" },
+  { value: "option3", label: "Option 3" },
+];
+
+
+export default function SelectBox({ name, label, placeholder, style }: SelectProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenuOpen = () => {
+    setIsOpen(!isOpen);
+  };
 
   const customStyles = {
     // Estilos personalizados para o ícone
@@ -23,21 +35,30 @@ interface SelectProps {
       ...base,
       transition: "transform 0.2s",
       transform: state.selectProps.menuIsOpen ? "rotate(180deg)" : "rotate(0)",
-    }),
+    })
   };
 
-export default function SelectBox({ name, label, placeholder }: SelectProps) {
-
   return (
-    <div className={styles.select}>
-        <label>{label}</label>
-        <Select
-            name={name}
-            className={styles["select-input"]}
-            placeholder={placeholder}
-            options={options}
-            styles={customStyles}
-        />
+    <div className={styles.select} style={style}>
+      <label>{label}</label>
+      <Select
+        name={name}
+        className={style === undefined ? styles["select-input"] : ''}
+        placeholder={placeholder}
+        options={options}
+        styles={customStyles}
+        isMenuOpen={isOpen}
+        onMenuOpen={handleMenuOpen}
+        onMenuClose={handleMenuOpen}
+        components={{
+          DropdownIndicator: () =>
+            isOpen ? (
+              <Image src={arrowUp} alt="" style={{ marginRight: 10 }} />
+            ) : (
+              <Image src={arrowDown} alt="" style={{ marginRight: 10 }} />
+            ),
+        }}
+      />
     </div>
   );
 }
