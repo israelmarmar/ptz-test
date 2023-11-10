@@ -1,0 +1,18 @@
+.select {
+   display: flex;
+   flex-direction: column;
+}
+
+.select label {
+    margin-bottom: 12px;
+    color: #1D1D1D;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.select-input {
+    width: 265px;
+}
