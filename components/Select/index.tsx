@@ -1,6 +1,6 @@
 import { useState, CSSProperties } from "react";
 import styles from "../../styles/SelectBox.module.css";
-import Select from "react-select";
+import Select, { ActionMeta, GroupBase, SingleValue } from "react-select";
 import Image from "next/image";
 import arrowUp from "../../public/icons/arrow-up.svg";
 import arrowDown from "../../public/icons/arrow-down.svg";
@@ -11,18 +11,14 @@ interface SelectProps {
   label: string;
   placeholder?: string;
   style?: CSSProperties;
+  options?: readonly (string | GroupBase<string>)[];
+  value?: string
+  onChange?: ((newValue: SingleValue<string>, actionMeta: ActionMeta<string>) => void) | undefined
 }
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
-const options = [
-  { value: "option1", label: "Option 1" },
-  { value: "option2", label: "Option 2" },
-  { value: "option3", label: "Option 3" },
-];
-
-
-export default function SelectBox({ name, label, placeholder, style }: SelectProps) {
+export default function SelectBox({ name, label, placeholder, options=[], style, value, onChange }: SelectProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMenuOpen = () => {
@@ -50,16 +46,8 @@ export default function SelectBox({ name, label, placeholder, style }: SelectPro
         placeholder={placeholder}
         options={options}
         styles={customStyles}
-        onMenuOpen={handleMenuOpen}
-        onMenuClose={handleMenuOpen}
-        components={{
-          DropdownIndicator: () =>
-            isOpen ? (
-              <Image src={arrowUp} alt="" style={{ marginRight: 10 }} />
-            ) : (
-              <Image src={arrowDown} alt="" style={{ marginRight: 10 }} />
-            ),
-        }}
+        defaultValue={value}
+        onChange={onChange}
       />
     </div>
   );
