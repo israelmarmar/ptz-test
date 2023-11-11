@@ -6,7 +6,6 @@ export default async function handler(
   res: NextApiResponse<Array<String>>
 ) {
   const { name } = req.query;
-  console.log(name);
   const { data } = await axios.get(`https://pokeapi.co/api/v2/region/${name || ''}`);
   res.status(200).json(name ? data.locations : data.results);
 }

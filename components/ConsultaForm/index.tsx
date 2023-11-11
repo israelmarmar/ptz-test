@@ -6,11 +6,14 @@ import { AddButton } from "../AddButton";
 import { RedButton } from "../RedButton";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
 import { ActionMeta, GroupBase, SingleValue } from "react-select";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export default function ConsultaForm() {
+  const router = useRouter()
+
   const [dates, setDates] = useState<readonly (string | GroupBase<string>)[]>(
     []
   );
@@ -42,27 +45,44 @@ export default function ConsultaForm() {
   }, [region]);
 
   useEffect(() => {
-    axios.get<string[]>("/api/scheduling/date").then((response) => {
-      setDates(
-        response.data.map((d: string) => Object.assign({ label: d, value: d }))
-      );
-    });
+    axios
+      .get<string[]>("/api/scheduling/date")
+      .then((response) => {
+        setDates(
+          response.data.map((d: string) =>
+            Object.assign({ label: d, value: d })
+          )
+        );
+      })
+      .catch((e) => {
+        router.push(`/consulta-error?msg=${e}`);
+      });
 
-    axios.get("/api/pokemon").then((response) => {
-      setPokemons(
-        response.data.map((d: any) =>
-          Object.assign({ label: d["name"], value: d["name"] })
-        )
-      );
-    });
+    axios
+      .get("/api/pokemon")
+      .then((response) => {
+        setPokemons(
+          response.data.map((d: any) =>
+            Object.assign({ label: d["name"], value: d["name"] })
+          )
+        );
+      })
+      .catch((e) => {
+        router.push(`/consulta-error?msg=${e}`);
+      });
 
-    axios.get("/api/region").then((response) => {
-      setRegions(
-        response.data.map((d: any) =>
-          Object.assign({ label: d["name"], value: d["name"] })
-        )
-      );
-    });
+    axios
+      .get("/api/region")
+      .then((response) => {
+        setRegions(
+          response.data.map((d: any) =>
+            Object.assign({ label: d["name"], value: d["name"] })
+          )
+        );
+      })
+      .catch((e) => {
+        router.push(`/consulta-error?msg=${e}`);
+      });
 
     axios
       .post<string[]>("/api/scheduling/time", {
@@ -74,6 +94,9 @@ export default function ConsultaForm() {
             Object.assign({ label: d, value: d })
           )
         );
+      })
+      .catch((e) => {
+        router.push(`/consulta-error?msg=${e}`);
       });
   }, []);
 
@@ -92,6 +115,9 @@ export default function ConsultaForm() {
     pokemons[index] = { value: selected.value };
     setPokeTeam(pokemons);
   };
+
+  const subtotal = 70 * pokeTeam.length;
+  const total = subtotal + 2.1;
 
   return (
     <>
@@ -201,7 +227,7 @@ export default function ConsultaForm() {
             <p
               className={`${styles["consulta-form-invoice-text"]} ${inter.className}`}
             >
-              01
+              {`0${pokeTeam.length}`}
             </p>
           </div>
 
@@ -227,7 +253,7 @@ export default function ConsultaForm() {
             <p
               className={`${styles["consulta-form-invoice-text"]} ${inter.className}`}
             >
-              R$ 70,00
+              {`R$ ${subtotal.toFixed(2).replace(".", ",")}`}
             </p>
           </div>
 
@@ -250,7 +276,9 @@ export default function ConsultaForm() {
           </p>
 
           <div className={styles["consulta-form-row-space-between"]}>
-            <h2 className={`${inter.className}`}>Valor Total: R$ 72,10</h2>
+            <h2 className={`${inter.className}`}>{`Valor Total: R$ ${total
+              .toFixed(2)
+              .replace(".", ",")}`}</h2>
             <RedButton
               title="Concluir Agendamento"
               link="/consulta-success"
