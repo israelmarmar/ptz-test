@@ -35,6 +35,10 @@ export default function ConsultaForm() {
   const [time, setTime] = useState();
   const [pokeTeam, setPokeTeam] = useState<{ value?: string }[]>([{}]);
 
+  const validating = () => {
+    return (region && city && date && time)
+  }
+
   useEffect(() => {
     if (region)
       axios.get(`/api/region?name=${region}`).then((response) => {
@@ -289,6 +293,7 @@ export default function ConsultaForm() {
               title="Concluir Agendamento"
               onClick={()=>router.push(`/consulta-success?quantity=${pokeTeam.length}&time=${time}&date=${date}`)}
               style={{ fontSize: 16 }}
+              disabled={!validating()}
             />
           </div>
         </div>

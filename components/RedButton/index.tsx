@@ -13,6 +13,7 @@ interface RedButtonProps {
   link?: string;
   style?: CSSProperties;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
 }
 
 export function RedButton({
@@ -22,15 +23,17 @@ export function RedButton({
   link,
   style,
   onClick,
+  disabled,
 }: RedButtonProps) {
   if (onClick)
     return (
       <button
         className={`${styles["red-button"]} ${
           isCollapse ? styles["red-button-collapse"] : ""
-        }`}
+        } ${disabled ? styles["red-button-disabled"] : ""}`}
         style={style}
         onClick={onClick}
+        disabled={disabled}
       >
         {iconSrc && <Image src={iconSrc || ""} alt="" />}
         <p
