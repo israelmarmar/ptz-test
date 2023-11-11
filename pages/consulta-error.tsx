@@ -12,8 +12,6 @@ export default function Consulta() {
   const searchParams = useSearchParams()
   const msg = searchParams.get('msg')
 
-  console.log(msg)
-
   return (
     <div className={styles.about}>
       <Head>

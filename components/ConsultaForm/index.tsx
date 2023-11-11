@@ -31,6 +31,8 @@ export default function ConsultaForm() {
   );
   const [region, setRegion] = useState();
   const [city, setCity] = useState();
+  const [date, setDate] = useState();
+  const [time, setTime] = useState();
   const [pokeTeam, setPokeTeam] = useState<{ value?: string }[]>([{}]);
 
   useEffect(() => {
@@ -197,12 +199,16 @@ export default function ConsultaForm() {
             name="consulta_date"
             label="Data para Atendimento"
             placeholder="Selecione uma data"
+            value={date}
+            onChange={(s: any) => setDate(s.value)}
             options={dates}
           />
           <SelectBox
             name="consulta_time"
             label="Horário de atendimento"
             placeholder="Selecione um horário"
+            value={time}
+            onChange={(s: any) => setTime(s.value)}
             options={times}
           />
         </div>
@@ -281,7 +287,7 @@ export default function ConsultaForm() {
               .replace(".", ",")}`}</h2>
             <RedButton
               title="Concluir Agendamento"
-              link="/consulta-success"
+              onClick={()=>router.push(`/consulta-success?quantity=${pokeTeam.length}&time=${time}&date=${date}`)}
               style={{ fontSize: 16 }}
             />
           </div>

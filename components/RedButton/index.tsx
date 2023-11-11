@@ -2,7 +2,7 @@ import styles from "../../styles/RedButton.module.css";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import Link from "next/link";
-import { CSSProperties } from "react";
+import { CSSProperties, MouseEventHandler } from "react";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -12,6 +12,7 @@ interface RedButtonProps {
   isCollapse?: boolean;
   link?: string;
   style?: CSSProperties;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export function RedButton({
@@ -20,7 +21,27 @@ export function RedButton({
   isCollapse,
   link,
   style,
+  onClick,
 }: RedButtonProps) {
+  if (onClick)
+    return (
+      <button
+        className={`${styles["red-button"]} ${
+          isCollapse ? styles["red-button-collapse"] : ""
+        }`}
+        style={style}
+        onClick={onClick}
+      >
+        {iconSrc && <Image src={iconSrc || ""} alt="" />}
+        <p
+          className={`${styles["red-button-text"]} ${inter.className}`}
+          style={style}
+        >
+          {title}
+        </p>
+      </button>
+    );
+
   return (
     <Link
       className={`${styles["red-button"]} ${
@@ -28,6 +49,7 @@ export function RedButton({
       }`}
       href={link || "#"}
       style={style}
+      onClick={onClick}
     >
       {iconSrc && <Image src={iconSrc || ""} alt="" />}
       <p
