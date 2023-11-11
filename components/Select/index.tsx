@@ -1,9 +1,9 @@
 import { useState, CSSProperties } from "react";
-import styles from "../../../styles/SelectBox.module.css";
+import styles from "../../styles/SelectBox.module.css";
 import Select from "react-select";
 import Image from "next/image";
-import arrowUp from "../../../public/icons/arrow-up.svg";
-import arrowDown from "../../../public/icons/arrow-down.svg";
+import arrowUp from "../../public/icons/arrow-up.svg";
+import arrowDown from "../../public/icons/arrow-down.svg";
 import { Inter } from "@next/font/google";
 
 interface SelectProps {
@@ -34,7 +34,7 @@ export default function SelectBox({ name, label, placeholder, style }: SelectPro
     indicatorSeparator: () => ({
       display: "none",
     }),
-    dropdownIndicator: (base, state) => ({
+    dropdownIndicator: (base: any, state: any) => ({
       ...base,
       transition: "transform 0.2s",
       transform: state.selectProps.menuIsOpen ? "rotate(180deg)" : "rotate(0)",
@@ -50,7 +50,6 @@ export default function SelectBox({ name, label, placeholder, style }: SelectPro
         placeholder={placeholder}
         options={options}
         styles={customStyles}
-        isMenuOpen={isOpen}
         onMenuOpen={handleMenuOpen}
         onMenuClose={handleMenuOpen}
         components={{

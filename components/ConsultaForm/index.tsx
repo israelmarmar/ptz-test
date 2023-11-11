@@ -1,4 +1,4 @@
-import styles from "../../../styles/ConsultaForm.module.css";
+import styles from "../../styles/ConsultaForm.module.css";
 import { Inter } from "@next/font/google";
 import Input from "../Input";
 import SelectBox from "../Select";
@@ -114,7 +114,7 @@ export default function ConsultaForm() {
 
                     <div className={styles["consulta-form-row-space-between"]}>
                         <h2 className={`${inter.className}`}>Valor Total: R$ 72,10</h2>
-                        <RedButton title="Concluir Agendamento" link="/consulta" style={{fontSize: 16}} />
+                        <RedButton title="Concluir Agendamento" link="/consulta-success" style={{fontSize: 16}} />
                     </div>
                 </div>
 

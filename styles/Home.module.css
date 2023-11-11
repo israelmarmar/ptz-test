@@ -4,8 +4,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
-  min-height: 100vh;
-  background-image: url("/images/pokemon-hero.jpg");
+  height: 95vh;
+  background: url("/images/pokemon-hero.jpg") no-repeat;
+  background-size: contain;
 }
 
 .main h6 {

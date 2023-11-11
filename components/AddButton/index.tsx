@@ -1,4 +1,4 @@
-import styles from "../../../styles/AddButton.module.css";
+import styles from "../../styles/AddButton.module.css";
 import { Inter } from '@next/font/google'
 import Link from "next/link";
 

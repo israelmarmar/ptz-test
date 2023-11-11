@@ -1,4 +1,4 @@
-import styles from "../../../styles/WhiteButton.module.css";
+import styles from "../../styles/WhiteButton.module.css";
 import Image from "next/image";
 import { Inter } from '@next/font/google'
 import Link from "next/link";

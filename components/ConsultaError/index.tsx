@@ -1,6 +1,6 @@
 import { Inter } from "@next/font/google";
-import styles from "../../../styles/Agendada.module.css";
-import errorIcon from "../../../public/icons/error.svg"
+import styles from "../../styles/Agendada.module.css";
+import errorIcon from "../../public/icons/error.svg"
 import Image from "next/image";
 import { RedButton } from "../RedButton";
 

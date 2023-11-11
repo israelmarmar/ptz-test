@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../../../styles/Subheader.module.css";
+import styles from "../../styles/Subheader.module.css";
 import { Breadcrumbs, Typography } from "@mui/material";
 import { Inter } from "@next/font/google";
 

@@ -1,5 +1,5 @@
-import styles from "../../../styles/Header.module.css";
-import pokeball from "../../../public/images/white-pokeball.svg";
+import styles from "../../styles/Header.module.css";
+import pokeball from "../../public/images/white-pokeball.svg";
 import { RedButton } from "../RedButton";
 import { WhiteButton } from "../WhiteButton";
 

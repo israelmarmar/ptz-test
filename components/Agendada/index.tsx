@@ -1,6 +1,6 @@
 import { Inter } from "@next/font/google";
-import styles from "../../../styles/Agendada.module.css";
-import successIcon from "../../../public/icons/success.svg"
+import styles from "../../styles/Agendada.module.css";
+import successIcon from "../../public/icons/success.svg"
 import Image from "next/image";
 import { RedButton } from "../RedButton";
 
