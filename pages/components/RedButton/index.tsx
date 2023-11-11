@@ -11,7 +11,7 @@ interface RedButtonProps {
   iconSrc?: string;
   isCollapse?: boolean;
   link?: string;
-  style: CSSProperties;
+  style?: CSSProperties;
 }
 
 export function RedButton({

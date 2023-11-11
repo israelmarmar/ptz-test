@@ -1,9 +1,27 @@
 .agendada-box {
     width: 408px;
-    height: 255px;
+    height: 280px;
     border-radius: 8px;
     border: 1px solid #DF8686;
     background: rgba(223, 134, 134, 0.04);
     margin-top: 300px;
     margin-bottom: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
+
+.agendada-box-text {
+    text-align: center;
+    color: #747474;
+    font-family: Inter;
+    font-size: 14px!important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }

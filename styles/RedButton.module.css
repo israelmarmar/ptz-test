@@ -65,7 +65,7 @@
 }
 
 .red-button-collapse:hover {
-    animation: none; /* Remove a animação padrão ao passar o mouse */
-    width: 260px; /* Largura aumenta quando o mouse passa por cima */
-    animation: scaleWidth 1s linear; /* Adiciona uma transição suave para a largura */
+    animation: none;
+    width: 260px;
+    animation: scaleWidth 1s linear;
   }
