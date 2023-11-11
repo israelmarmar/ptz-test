@@ -4,6 +4,7 @@ import Select from "react-select";
 import Image from "next/image";
 import arrowUp from "../../../public/icons/arrow-up.svg";
 import arrowDown from "../../../public/icons/arrow-down.svg";
+import { Inter } from "@next/font/google";
 
 interface SelectProps {
   name: string;
@@ -11,6 +12,8 @@ interface SelectProps {
   placeholder?: string;
   style?: CSSProperties;
 }
+
+const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 const options = [
   { value: "option1", label: "Option 1" },
@@ -43,7 +46,7 @@ export default function SelectBox({ name, label, placeholder, style }: SelectPro
       <label>{label}</label>
       <Select
         name={name}
-        className={style === undefined ? styles["select-input"] : ''}
+        className={`${!style ? styles["select-input"] : ''} ${inter.className}`}
         placeholder={placeholder}
         options={options}
         styles={customStyles}

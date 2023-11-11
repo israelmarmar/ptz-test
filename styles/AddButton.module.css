@@ -1,0 +1,36 @@
+.add-button img{
+    margin-left: 12px;
+    margin-right: 10px;
+}
+
+.add-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 50px;
+  border: 1px solid #1D1D1D;
+  background: #fff;
+  width: 260px;
+  padding: 10px 15px 10px 10px;
+  color: #1D1D1D;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.add-button-text {
+  color: #1D1D1D!important;
+  text-align: center;
+  vertical-align: middle;
+  overflow-x: hidden;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
