@@ -1,0 +1,9 @@
+.agendada-box {
+    width: 408px;
+    height: 255px;
+    border-radius: 8px;
+    border: 1px solid #DF8686;
+    background: rgba(223, 134, 134, 0.04);
+    margin-top: 300px;
+    margin-bottom: 300px;
+}

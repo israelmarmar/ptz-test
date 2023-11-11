@@ -55,6 +55,11 @@
   vertical-align: middle;
   overflow-x: hidden;
   position: relative;
+  color: #fff!important;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
   top: 0px;
   left: 0px;
 }

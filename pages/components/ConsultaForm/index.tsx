@@ -3,6 +3,7 @@ import { Inter } from "@next/font/google";
 import Input from "../Input";
 import SelectBox from "../Select";
 import { AddButton } from "../AddButton";
+import { RedButton } from "../RedButton";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -40,7 +41,7 @@ export default function ConsultaForm() {
                 <br />
 
                 <div style={{ whiteSpace: "nowrap", marginBottom: 50 }}>
-                    <label style={{ marginRight: 80, display: "inline-block" }}>
+                    <label style={{ marginRight: 80, display: "inline-block" }} className={`${inter.className}`}>
                         Pokemon 1
                     </label>
                     <SelectBox
@@ -52,7 +53,7 @@ export default function ConsultaForm() {
                 </div>
 
                 <div style={{ whiteSpace: "nowrap", marginBottom: 50 }}>
-                    <label style={{ marginRight: 80, display: "inline-block" }}>
+                    <label style={{ marginRight: 80, display: "inline-block" }} className={`${inter.className}`}>
                         Pokemon 2
                     </label>
                     <SelectBox
@@ -90,26 +91,31 @@ export default function ConsultaForm() {
 
                 <div className="consulta-form-invoice">
                     <div className={styles["consulta-form-row-space-between"]}>
-                        <p className={styles["consulta-form-invoice-text"]}>Número de pokémons a serem atendidos:</p>
-                        <p className={styles["consulta-form-invoice-text"]}>01</p>
+                        <p className={`${styles["consulta-form-invoice-text"]} ${inter.className}`}>Número de pokémons a serem atendidos:</p>
+                        <p className={`${styles["consulta-form-invoice-text"]} ${inter.className}`}>01</p>
                     </div>
 
                     <div className={styles["consulta-form-row-space-between"]}>
-                        <p className={styles["consulta-form-invoice-text"]}>Atendimento unitário por pokémon:</p>
-                        <p className={styles["consulta-form-invoice-text"]}>R$ 70,00</p>
+                        <p className={`${styles["consulta-form-invoice-text"]} ${inter.className}`}>Atendimento unitário por pokémon:</p>
+                        <p className={`${styles["consulta-form-invoice-text"]} ${inter.className}`}>R$ 70,00</p>
                     </div>
 
                     <div className={styles["consulta-form-row-space-between"]}>
-                        <p className={styles["consulta-form-invoice-text"]}>Subtotal:</p>
-                        <p className={styles["consulta-form-invoice-text"]}>R$ 70,00</p>
+                        <p className={`${styles["consulta-form-invoice-text"]} ${inter.className}`}>Subtotal:</p>
+                        <p className={`${styles["consulta-form-invoice-text"]} ${inter.className}`}>R$ 70,00</p>
                     </div>
 
                     <div className={styles["consulta-form-row-space-between"]}>
-                        <p className={styles["consulta-form-invoice-text"]}>Taxa geracional*: </p>
-                        <p className={styles["consulta-form-invoice-text"]}>R$ 2,10</p>
+                        <p className={`${styles["consulta-form-invoice-text"]} ${inter.className}`}>Taxa geracional*: </p>
+                        <p className={`${styles["consulta-form-invoice-text"]} ${inter.className}`}>R$ 2,10</p>
                     </div>
 
-                    <p>*adicionamos uma taxa de 3%, multiplicado pelo número da geração mais alta do time, com limite de até 30%</p>
+                    <p className={`${inter.className}`}>*adicionamos uma taxa de 3%, multiplicado pelo número da geração mais alta do time, com limite de até 30%</p>
+
+                    <div className={styles["consulta-form-row-space-between"]}>
+                        <h2 className={`${inter.className}`}>Valor Total: R$ 72,10</h2>
+                        <RedButton title="Concluir Agendamento" link="/consulta" style={{fontSize: 16}} />
+                    </div>
                 </div>
 
             </div>
