@@ -5,6 +5,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Array<String>>
 ) {
-  const { data } = await axios.get("https://pokeapi.co/api/v2/pokemon");
-  res.status(200).json(data.results);
+  const { name } = req.query;
+  const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name || ''}`);
+  res.status(200).json(name ? data.sprites.versions : data.results);
 }

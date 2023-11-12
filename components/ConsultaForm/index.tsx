@@ -123,7 +123,8 @@ export default function ConsultaForm() {
   };
 
   const subtotal = 70 * pokeTeam.length;
-  const total = subtotal + 2.1;
+  const fee = subtotal*0.03
+  const total = subtotal + fee;
 
   return (
     <>
@@ -276,7 +277,7 @@ export default function ConsultaForm() {
             <p
               className={`${styles["consulta-form-invoice-text"]} ${inter.className}`}
             >
-              R$ 2,10
+              {`R$ ${fee.toFixed(2).replace(".", ",")}`}
             </p>
           </div>
 
