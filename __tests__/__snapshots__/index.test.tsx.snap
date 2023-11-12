@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders a heading 1`] = `
+<div>
+  <main
+    class="main"
+  >
+    <h6>
+      Cuidamos bem do seu pokémon, para ele cuidar bem de você
+    </h6>
+  </main>
+</div>
+`;

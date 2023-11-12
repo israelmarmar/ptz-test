@@ -13,8 +13,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <h6>Cuidamos bem do seu pokémon,
+      <main className={styles.main} data-testid="main-with-image" >
+        <h6 data-testid="heading">Cuidamos bem do seu pokémon,
             para ele cuidar bem de você</h6>
       </main>
     </>
